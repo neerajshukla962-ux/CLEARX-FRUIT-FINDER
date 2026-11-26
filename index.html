@@ -1,1 +1,69 @@
 
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>CLEARX FRUIT FINDER</title>
+<style>
+body {
+  background:#10101d;
+  color:white;
+  font-family:Arial;
+  text-align:center;
+  padding:20px;
+}
+h1 {color:#b66cff}
+.card {
+  background:#222239;
+  padding:18px;
+  border-radius:14px;
+  margin-top:20px;
+}
+button {
+  background:#873cff;
+  color:white;
+  border:0;
+  padding:14px 25px;
+  border-radius:9px;
+  font-weight:bold;
+}
+input {
+  padding:12px;
+  border-radius:8px;
+  border:0;
+  width:85%;
+  margin:10px;
+}
+</style>
+</head>
+<body>
+<h1>🍎 CLEARX FRUIT FINDER</h1>
+<p>Blox Fruits Server Finder</p>
+
+<div class="card">
+<h3>🌍 Live Fruit Servers</h3>
+<p id="status">Waiting for fruit data API...</p>
+<button onclick="scan()">SCAN SERVERS</button>
+</div>
+
+<div class="card">
+<h3>🔎 Search Fruit</h3>
+<input id="fruit" placeholder="Enter fruit name">
+<button onclick="searchFruit()">SEARCH</button>
+<p id="result">No verified reports yet.</p>
+</div>
+
+<script>
+function scan() {
+ document.getElementById("status").innerText =
+ "No live fruit data source connected yet.";
+}
+function searchFruit() {
+ let name = document.getElementById("fruit").value;
+ document.getElementById("result").innerText =
+ name ? "No verified reports for " + name : "Enter a fruit name.";
+}
+</script>
+</body>
+  </html>
+
